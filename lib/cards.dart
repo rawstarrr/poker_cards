@@ -19,11 +19,16 @@ class Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      childAspectRatio: 0.73,
-      semanticChildCount: items.length,
-      children: items.map((text) => SmallCard(text: text)).toList(),
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: GridView.count(
+        crossAxisCount: 3,
+        childAspectRatio: 0.73,
+        crossAxisSpacing: 2.5,
+        semanticChildCount: items.length,
+        children: items.map((text) => SmallCard(text: text)).toList(),
+      ),
     );
   }
 }
@@ -36,7 +41,8 @@ class SmallCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.red,
+      elevation: 10,
+      color: Colors.red[800],
       child: Center(
         child: Text(
           text,
