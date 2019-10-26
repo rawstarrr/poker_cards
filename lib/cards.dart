@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class Cards extends StatelessWidget {
   final items = [
@@ -14,13 +17,13 @@ class Cards extends StatelessWidget {
     '40',
     '100',
     '?',
-    'Coffee',
+    '☕',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Colors.yellow,
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: GridView.count(
         crossAxisCount: 3,
@@ -40,19 +43,48 @@ class SmallCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+  int min = 0;
+  int max = 3;
+
+  Random rnd =  Random();
+  var index = min + rnd.nextInt(max - min);
+
+  var animations = ['Stand', 'Dance', 'Jump', 'Wave'];
+    
+  String animation = animations[index];
+  print(animation);
+
     return Card(
-      elevation: 10,
-      color: Colors.red[800],
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
+      elevation: 5,
+      color: Colors.white,
+      child: 
+      Stack(
+        children: <Widget>[
+         
+          Center(child: 
+            Text(text,
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, fontFamily: 'Minion', color: Colors.yellow),
+            )
           ),
-        ),
-      ),
+
+          Positioned(
+            bottom: -20,
+            right: -20,
+            child: 
+            Container(
+              width: 100,
+              height: 100,
+              child: FlareActor(
+                  "images/bob.flr",
+                  animation: animation,
+                ),
+            )
+              
+        )
+
+        ],
+      )
     );
   }
 }
