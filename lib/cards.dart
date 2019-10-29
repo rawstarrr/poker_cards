@@ -43,48 +43,47 @@ class SmallCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-  int min = 0;
-  int max = 3;
+    int min = 0;
+    int max = 3;
 
-  Random rnd =  Random();
-  var index = min + rnd.nextInt(max - min);
+    Random rnd = Random();
+    var index = min + rnd.nextInt(max - min);
 
-  var animations = ['Stand', 'Dance', 'Jump', 'Wave'];
-    
-  String animation = animations[index];
-  print(animation);
+    var animations = ['Stand', 'Dance', 'Jump', 'Wave'];
+
+    String animation = animations[index];
+    print(animation);
 
     return Card(
       elevation: 5,
       color: Colors.white,
-      child: 
-      Stack(
+      child: Stack(
         children: <Widget>[
-         
-          Center(child: 
-            Text(text,
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, fontFamily: 'Minion', color: Colors.yellow),
-            )
+          Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Minion',
+                color: Colors.yellow,
+              ),
+            ),
           ),
-
           Positioned(
             bottom: -20,
             right: -20,
-            child: 
-            Container(
+            child: Container(
               width: 100,
               height: 100,
               child: FlareActor(
-                  "images/bob.flr",
-                  animation: animation,
-                ),
-            )
-              
-        )
-
+                "images/bob.flr",
+                animation: animation,
+              ),
+            ),
+          ),
         ],
-      )
+      ),
     );
   }
 }
