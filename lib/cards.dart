@@ -46,7 +46,7 @@ class Cards extends StatelessWidget {
             context: context,
             child: FlipCard(
               direction: FlipDirection.VERTICAL,
-              front: Container(
+              back: Container(
                 color: Colors.transparent,
                 padding: EdgeInsets.symmetric(
                   horizontal: 30,
@@ -58,16 +58,15 @@ class Cards extends StatelessWidget {
                   minionSize: 250,
                 ),
               ),
-              back: Container(
+              front: Container(
                 color: Colors.transparent,
                 padding: EdgeInsets.symmetric(
                   horizontal: 30,
                   vertical: 100,
                 ),
-                child: PokerCard(
-                  text: text,
+                child: MinionOnlyCard(
                   animation: animation,
-                  minionSize: 250,
+                  minionSize: 350,
                 ),
               ),
             ),
@@ -152,10 +151,28 @@ class PokerCard extends StatelessWidget {
 }
 
 class MinionOnlyCard extends StatelessWidget {
+  const MinionOnlyCard({
+    @required this.animation,
+    @required this.minionSize,
+  });
+
+  final String animation;
+  final double minionSize;
+
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
+      child: Center(
+        child: Container(
+          width: minionSize,
+          height: minionSize,
+          child: FlareActor(
+            "images/bob.flr",
+            animation: animation,
+          ),
+        ),
+      ),
     );
   }
 }
