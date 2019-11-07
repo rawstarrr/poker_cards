@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:poker_cards/cards.dart';
+import 'package:poker_cards/splash.dart';
 
 void main() => runApp(PokerCardsApp());
 
@@ -11,7 +11,7 @@ class PokerCardsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Cards(),
+      home: Splash(),
     );
   }
 }
