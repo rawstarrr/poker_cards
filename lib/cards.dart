@@ -34,35 +34,37 @@ class Cards extends StatelessWidget {
 
       String animation = animations[index];
       print(animation);
+      final smallMinionSize = MediaQuery.of(context).size.height * 0.11;
       return GestureDetector(
         child: PokerCard(
           text: text,
           animation: animation,
-          minionSize: 100,
+          minionSize: smallMinionSize,
         ),
         onTap: () {
+          final verticalMargin = MediaQuery.of(context).size.height * 0.12;
+          final minionSize = MediaQuery.of(context).size.height * 0.3;
           showDialog(
-            barrierDismissible: true,
             context: context,
             child: FlipCard(
               direction: FlipDirection.VERTICAL,
               back: Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.symmetric(
+                margin: EdgeInsets.symmetric(
                   horizontal: 30,
-                  vertical: 100,
+                  vertical: verticalMargin,
                 ),
                 child: PokerCard(
                   text: text,
                   animation: animation,
-                  minionSize: 250,
+                  minionSize: minionSize,
                 ),
               ),
               front: Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.symmetric(
+                margin: EdgeInsets.symmetric(
                   horizontal: 30,
-                  vertical: 100,
+                  vertical: verticalMargin,
                 ),
                 child: MinionOnlyCard(
                   animation: animation,
@@ -134,7 +136,7 @@ class PokerCard extends StatelessWidget {
           ),
           Positioned(
             bottom: -20,
-            right: -20,
+            right: -15,
             child: Container(
               width: minionSize,
               height: minionSize,
