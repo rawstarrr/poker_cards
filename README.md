@@ -1,16 +1,9 @@
-# poker_cards
+![](extras/poker_cards_demo.gif)
 
-A new Flutter project.
+# Poker Cards
 
-## Getting Started
+Poker Cards is a tool used by an Agile team in planning and estimating tasks. Usually, the product owner or customer reads an agile user story or describes a feature to the estimators.
 
-This project is a starting point for a Flutter application.
+Each estimator is holding a deck of Poker cards with values like 0, 1, 2, 3, 5, 8, 13, 20, 40 and 100, which is the sequence we recommend. The values represent the number of story points, ideal days, or other units in which the team estimates.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### For more Flutter stuffs. Visit [Flutter](https://flutter.dev/)'s website.
